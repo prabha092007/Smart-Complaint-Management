@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+body {
+  background: #241619;
+  color: #f5e7ec;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* ---------- ComplaintOps theme helpers ---------- */
+
+/* warm dark page canvas used by the app shell + auth screens */
+.co-canvas {
+  background:
+    radial-gradient(900px 500px at 12% -8%, rgba(255,77,135,0.16), transparent 60%),
+    radial-gradient(1100px 700px at 110% 0%, rgba(232,128,60,0.10), transparent 55%),
+    linear-gradient(180deg, #2a181d 0%, #221317 100%);
+}
+
+.co-rail {
+  background: linear-gradient(180deg, #1d1114 0%, #180d10 100%);
+}
+
+/* the signature light rose gradient panel */
+.co-panel {
+  background: linear-gradient(150deg, #fbe6ee 0%, #f6d2e0 52%, #f2c3d6 100%);
+  border: 1px solid rgba(255,255,255,0.45);
+  box-shadow: 0 18px 40px -22px rgba(60,10,30,0.55);
+}
+.co-panel-red    { background: linear-gradient(150deg, #fce0e5 0%, #f6c6d0 55%, #f0aebc 100%); }
+.co-panel-amber  { background: linear-gradient(150deg, #fde7d9 0%, #f8d3bd 55%, #f3c4a8 100%); }
+.co-panel-plain  { background: linear-gradient(150deg, #f7e9ef 0%, #f2dbe6 100%); }
+
+.co-btn {
+  background: linear-gradient(135deg, #ff4d87 0%, #ff86b4 100%);
+  color: #fff;
+  box-shadow: 0 10px 24px -10px rgba(255,77,135,0.7);
+}
+.co-btn:hover { filter: brightness(1.05); }
+.co-btn:disabled { opacity: .55; box-shadow: none; cursor: not-allowed; }
+
+.co-chip {
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.6);
+}
+
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-thumb { background: #4a2c37; border-radius: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+@keyframes pulseCard {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(226,61,99,0); }
+  50% { box-shadow: 0 0 0 3px rgba(226,61,99,.18); }
+}
+.animate-pulse-crit { animation: pulseCard 1.6s infinite; }
+
+@keyframes ringGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(226,61,99,.35); }
+  50% { box-shadow: 0 0 0 6px rgba(226,61,99,0); }
+}
+.animate-ring-glow { animation: ringGlow 1.8s infinite; }
